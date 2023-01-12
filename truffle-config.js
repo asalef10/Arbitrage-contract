@@ -73,8 +73,8 @@ module.exports = {
     goerli: {
       provider: () =>
         new HDWalletProvider(
-          "fdd71d62d53daaeb6136b4713e4b254d435c6112046d9b34a0bc3af1d8906da5",
-          `https://goerli.infura.io/v3/3829b14aea8b40c982384f10c153121f`
+          process.env.WALLET_KEY,
+          `https://goerli.infura.io/v3/${process.env.INFURA_KEY}`
         ),
       network_id: "5",
       gas: 4465030,
