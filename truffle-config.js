@@ -45,7 +45,8 @@
 // const { MNEMONIC, PROJECT_ID } = process.env;
 
 const HDWalletProvider = require("@truffle/hdwallet-provider");
-
+const WALLET_KEY = process.env.WALLET_KEY;
+const INFURA_KEY = process.env.INFURA_KEY;
 module.exports = {
   /**
    * Networks define how you connect to your ethereum client and let you set the
@@ -73,8 +74,8 @@ module.exports = {
     goerli: {
       provider: () =>
         new HDWalletProvider(
-          process.env.WALLET_KEY,
-          `https://goerli.infura.io/v3/${process.env.INFURA_KEY}`
+          WALLET_KEY,
+          `https://goerli.infura.io/v3/${INFURA_KEY}`
         ),
       network_id: "5",
       gas: 4465030,
