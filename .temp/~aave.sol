@@ -32,16 +32,10 @@ contract FlashLoan is FlashLoanSimpleReceiverBase {
         address initiator,
         bytes calldata params
     ) external override returns (bool) {
-        // This contract now has the funds requested.
-        // Your logic goes here..
-        
+    //    logic goes here..
+// --
 
-        // At the end of your logic above, this contract owes
-        // the flashloaned amount + premiums.
-        // Therefore ensure your contract has enough to repay
-        // these amounts.
-
-        // Approve the Pool contract allowance to *pull* the owed amount
+// --
         uint256 amountOwed = amount + premium;
         IERC20(asset).approve(address(POOL), amountOwed);
         return true;
