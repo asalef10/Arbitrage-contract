@@ -7,7 +7,7 @@ import {IERC20} from "@aave/core-v3/contracts/dependencies/openzeppelin/contract
 import "@uniswap/v2-periphery/contracts/interfaces/IUniswapV2Router01.sol";
 
 contract FlashLoan is FlashLoanSimpleReceiverBase {
-    address payable owner;
+    address payable internal owner;
     address constant _addressProvider_Polygon =
         0x5343b5bA672Ae99d627A1C87866b8E53F47Db2E6;
     address WBTCTestnetMintableERC20Polygon =
@@ -25,6 +25,7 @@ contract FlashLoan is FlashLoanSimpleReceiverBase {
         owner = payable(msg.sender);
     }
 
+
     function executeOperation(
         address asset,
         uint256 amount,
@@ -40,8 +41,10 @@ contract FlashLoan is FlashLoanSimpleReceiverBase {
         IERC20(asset).approve(address(POOL), amountOwed);
         return true;
     }
+    
 
-    function requestFlashLoan(address _token, uint256 _amount) public {
+    function requestFlashLoan(address _token, uint256 _amount)  public {
+        
         address receiverAddress = address(this);
         address asset = _token;
         uint256 amount = _amount;
