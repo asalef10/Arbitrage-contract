@@ -13,10 +13,10 @@ const fetchData = async () => {
       const timestamp = new Date(item.timestamp).getTime();
       bitcoinPrice = item.bitcoinPrice;
 
-      const wbitcoinPrice = item.wbitcoinPrice;
+      const wBitcoinPrice = item.wbitcoinPrice;
 
       times.push([timestamp, bitcoinPrice]);
-      prices.push([wbitcoinPrice]);
+      prices.push([wBitcoinPrice]);
     });
   } catch (error) {
     console.error("Error fetching data:", error);
@@ -25,7 +25,7 @@ const fetchData = async () => {
 
 const getTimestampIn7Hours = () => {
   const currentTimestamp = Date.now();
-  const sevenHoursFromNow = currentTimestamp + 1 * 60 * 60 * 1000;
+  const sevenHoursFromNow = currentTimestamp + 7 * 60 * 60 * 1000;
 
   return sevenHoursFromNow;
 };
