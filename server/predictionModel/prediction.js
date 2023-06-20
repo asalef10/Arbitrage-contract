@@ -25,7 +25,7 @@ const fetchData = async () => {
 
 const getTimestampIn7Hours = () => {
   const currentTimestamp = Date.now();
-  const sevenHoursFromNow = currentTimestamp + 7 * 60 * 60 * 1000;
+  const sevenHoursFromNow = currentTimestamp + 1 * 60 * 60 * 1000;
 
   return sevenHoursFromNow;
 };
